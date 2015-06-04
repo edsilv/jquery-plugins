@@ -1,0 +1,28 @@
+{
+  "name": "jquery-plugins",
+  "version": "0.0.1",
+  "description": "extends jquery with utility functions",
+  "main": "dist/jquery-plugins.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edsilv/jquery-plugins.git"
+  },
+  "keywords": [],
+  "author": "Edward Silverton <e.silverton@gmail.com> (http://edsilv.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edsilv/jquery-plugins/issues"
+  },
+  "homepage": "https://github.com/edsilv/jquery-plugins",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^2.7.4",
+    "merge2": "^0.3.5",
+    "run-sequence": "^1.1.0"
+  },
+  "dependencies": {
+
+  }
+}
