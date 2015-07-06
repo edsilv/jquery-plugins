@@ -208,9 +208,10 @@
 
     };
 
-    $.fn.equaliseHeight = function (reset) {
+    $.fn.equaliseHeight = function (reset, average) {
 
         var maxHeight = -1;
+        var minHeight = Number.MAX_VALUE;
 
         // reset all heights to auto first so they can be re-measured.
         if (reset){
@@ -220,11 +221,19 @@
         }
 
         this.each(function () {
-            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+            var currentHeight = $(this).height();
+            maxHeight = maxHeight > currentHeight ? maxHeight : currentHeight;
+            minHeight = minHeight < currentHeight ? minHeight : currentHeight;
         });
 
+        var finalHeight = maxHeight;
+
+        if (average){
+            finalHeight = (minHeight + maxHeight) * 0.5;
+        }
+
         this.each(function () {
-            $(this).height(maxHeight);
+            $(this).height(finalHeight);
         });
 
         return this;
