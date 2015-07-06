@@ -154,6 +154,7 @@
     $.fn.equaliseHeight = function (reset, average) {
         var maxHeight = -1;
         var minHeight = Number.MAX_VALUE;
+        var heights = [];
         // reset all heights to auto first so they can be re-measured.
         if (reset) {
             this.each(function () {
@@ -162,12 +163,13 @@
         }
         this.each(function () {
             var currentHeight = $(this).height();
+            heights.push(currentHeight);
             maxHeight = maxHeight > currentHeight ? maxHeight : currentHeight;
             minHeight = minHeight < currentHeight ? minHeight : currentHeight;
         });
         var finalHeight = maxHeight;
         if (average) {
-            finalHeight = (minHeight + maxHeight) * 0.5;
+            finalHeight = Math.median(heights);
         }
         this.each(function () {
             $(this).height(finalHeight);
