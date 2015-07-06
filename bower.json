@@ -10,8 +10,7 @@
   "moduleType": [
     "globals"
   ],
-  "keywords": [
-  ],
+  "keywords": [],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -19,5 +18,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "Units": "https://github.com/heygrady/Units.git"
+  }
 }

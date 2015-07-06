@@ -1,12 +1,12 @@
-var gulp = require('gulp'),
-    ts = require('gulp-typescript'),
-    rename = require('gulp-rename'),
-    merge = require('merge2'),
+var Config = require('./gulpfile.config'),
+    config = new Config(),
     del = require('del'),
+    gulp = require('gulp'),
+    merge = require('merge2');
+    requireDir = require('require-dir'),
     runSequence = require('run-sequence'),
-    Config = require('./gulpfile.config');
-
-var config = new Config();
+    tasks = requireDir('./tasks'),
+    ts = require('gulp-typescript');
 
 gulp.task('clean:dist', function (cb) {
     del([
@@ -31,6 +31,6 @@ gulp.task('build', function() {
     ]);
 });
 
-gulp.task('default', function(callback) {
-    runSequence('clean:dist', 'build', callback);
+gulp.task('default', function(cb) {
+    runSequence('clean:dist', 'build', cb);
 });
