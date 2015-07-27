@@ -296,7 +296,7 @@
     };
 
     // Recursively removes the last empty element (img, audio, etc) or word in an element
-    $.fn.removeLastWord = function (chars, depth) {
+    $.fn.removeLastWord = function (chars?: number, depth?: number) {
 
         if ('undefined' === typeof chars)
             chars = 8;
@@ -354,7 +354,7 @@
         });
     };
 
-    $.fn.toggleExpandText = function (chars, callback) {
+    $.fn.toggleExpandText = function (chars: number, lessText: string, moreText: string, callback: () => void) {
 
         return this.each(function () {
 
@@ -376,11 +376,11 @@
 
                 if (expanded) {
                     $self.html(expandedText + "&nbsp;");
-                    $toggleButton.text("less");
+                    $toggleButton.text(lessText);
                     $toggleButton.toggleClass("less", "more");
                 } else {
                     $self.html(collapsedText + "&nbsp;");
-                    $toggleButton.text("more");
+                    $toggleButton.text(moreText);
                     $toggleButton.toggleClass("more", "less");
                 }
 
@@ -402,7 +402,7 @@
     };
 
     // Toggle expansion by number of lines
-    $.fn.toggleExpandTextByLines = function (lines, callback) {
+    $.fn.toggleExpandTextByLines = function (lines: number, lessText: string, moreText: string, callback: () => void) {
         return this.each(function () {
             var $self = $(this);
             var expandedText = $self.html();
@@ -439,12 +439,12 @@
                 var $toggleButton = $('<a href="#" class="toggle"></a>');
                 if (expanded) {
                     $self.html(expandedText + " ");
-                    $toggleButton.text("less");
+                    $toggleButton.text(lessText);
                     $toggleButton.toggleClass("less", "more");
                 }
                 else {
                     $self.html(collapsedText + "&hellip; ");
-                    $toggleButton.text("more");
+                    $toggleButton.text(moreText);
                     $toggleButton.toggleClass("more", "less");
                 }
                 $toggleButton.one('click', function (e) {
