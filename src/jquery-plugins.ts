@@ -1,6 +1,6 @@
 (function ($) {
 
-    $.fn.checkBoxButton = function(onClicked: (checked: boolean) => void) {
+    $.fn.checkboxButton = function(onClicked: (checked: boolean) => void) {
 
         return this.each(function() {
 

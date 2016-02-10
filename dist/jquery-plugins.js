@@ -1,5 +1,5 @@
 (function ($) {
-    $.fn.checkBoxButton = function (onClicked) {
+    $.fn.checkboxButton = function (onClicked) {
         return this.each(function () {
             var $this = $(this);
             $this.on('click', function (e) {
