@@ -1,6 +1,6 @@
 (function ($) {
 
-    $.fn.checkboxButton = function(onClicked: (checked: boolean) => void) {
+    $.fn.checkboxButton = function(onClick: (checked: boolean) => void) {
 
         return this.each(function() {
 
@@ -12,8 +12,9 @@
 
                 var $checkbox: JQuery;
 
-                if (tagName === "LABEL"){
+                if (tagName !== "INPUT"){
                     e.preventDefault();
+
                     $checkbox = $(this).parent().find(':checkbox');
                     $checkbox.prop('checked', !$checkbox.prop('checked'));
                 } else {
@@ -22,7 +23,7 @@
 
                 var checked: boolean = $checkbox.is(':checked');
 
-                onClicked(checked);
+                onClick(checked);
             });
 
         });

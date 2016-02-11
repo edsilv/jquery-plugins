@@ -1,11 +1,11 @@
 (function ($) {
-    $.fn.checkboxButton = function (onClicked) {
+    $.fn.checkboxButton = function (onClick) {
         return this.each(function () {
             var $this = $(this);
             $this.on('click', function (e) {
                 var tagName = e.target.tagName;
                 var $checkbox;
-                if (tagName === "LABEL") {
+                if (tagName !== "INPUT") {
                     e.preventDefault();
                     $checkbox = $(this).parent().find(':checkbox');
                     $checkbox.prop('checked', !$checkbox.prop('checked'));
@@ -14,7 +14,7 @@
                     $checkbox = $(this);
                 }
                 var checked = $checkbox.is(':checked');
-                onClicked(checked);
+                onClick(checked);
             });
         });
     };
