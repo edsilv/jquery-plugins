@@ -1,6 +1,6 @@
 {
   "name": "jquery-plugins",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "extends jquery with utility functions",
   "main": "dist/jquery-plugins.js",
   "repository": {

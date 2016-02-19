@@ -15,7 +15,7 @@
                 if (tagName !== "INPUT"){
                     e.preventDefault();
 
-                    $checkbox = $(this).parent().find(':checkbox');
+                    $checkbox = $(this).find(':checkbox');
                     $checkbox.prop('checked', !$checkbox.prop('checked'));
                 } else {
                     $checkbox = $(this);
@@ -23,7 +23,7 @@
 
                 var checked: boolean = $checkbox.is(':checked');
 
-                onClick(checked);
+                onClick.call(this, checked);
             });
 
         });
@@ -264,9 +264,29 @@
         return parseInt($self.css('marginLeft')) + parseInt($self.css('marginRight'));
     };
 
+    $.fn.leftMargin = function () {
+        var $self = $(this);
+        return parseInt($self.css('marginLeft'));
+    };
+
+    $.fn.rightMargin = function () {
+        var $self = $(this);
+        return parseInt($self.css('marginRight'));
+    };
+
     $.fn.horizontalPadding = function () {
         var $self = $(this);
         return parseInt($self.css('paddingLeft')) + parseInt($self.css('paddingRight'));
+    };
+
+    $.fn.leftPadding = function () {
+        var $self = $(this);
+        return parseInt($self.css('paddingLeft'));
+    };
+
+    $.fn.rightPadding = function () {
+        var $self = $(this);
+        return parseInt($self.css('paddingRight'));
     };
 
     $.mlp = {x:0,y:0}; // Mouse Last Position
