@@ -144,7 +144,7 @@
     };
 
     // Truncates to a certain number of letters, while ignoring and preserving HTML
-    $.fn.ellipsisHtmlFixed = function (chars, callback) {
+    $.fn.ellipsisHtmlFixed = function (chars, cb) {
 
         return this.each(function () {
 
@@ -193,7 +193,7 @@
 
                 $self.append($toggleButton);
 
-                if (callback) callback();
+                if (cb) cb();
             };
 
             $self.toggle();
@@ -328,7 +328,7 @@
         return on.apply(this, args);
     };
 
-    $.fn.onEnter = function (callback) {
+    $.fn.onEnter = function (cb) {
 
         return this.each(function() {
 
@@ -337,13 +337,13 @@
             $this.on('keyup', function(e) {
                 if (e.keyCode === 13) {
                     e.preventDefault();
-                    callback();
+                    cb();
                 }
             });
         });
     };
 
-    $.fn.onPressed = function (callback) {
+    $.fn.onPressed = function (cb) {
 
         return this.each(function() {
 
@@ -351,13 +351,13 @@
 
             $this.on('touchstart click', function(e) {
                 e.preventDefault();
-                callback();
+                cb(e);
             });
 
             $this.on('keyup', function(e) {
                 if (e.keyCode === 13) {
                     e.preventDefault();
-                    callback();
+                    cb(e);
                 }
             });
         });
@@ -422,7 +422,7 @@
         });
     };
 
-    $.fn.toggleExpandText = function (chars: number, lessText: string, moreText: string, callback: () => void) {
+    $.fn.toggleExpandText = function (chars: number, lessText: string, moreText: string, cb: () => void) {
 
         return this.each(function () {
 
@@ -462,7 +462,7 @@
 
                 $self.append($toggleButton);
 
-                if (callback) callback();
+                if (cb) cb();
             };
 
             $self.toggle();
@@ -470,7 +470,7 @@
     };
 
     // Toggle expansion by number of lines
-    $.fn.toggleExpandTextByLines = function (lines: number, lessText: string, moreText: string, callback: () => void) {
+    $.fn.toggleExpandTextByLines = function (lines: number, lessText: string, moreText: string, cb: () => void) {
         return this.each(function () {
             var $self = $(this);
             var expandedText = $self.html();
@@ -521,8 +521,8 @@
                 });
                 expanded = !expanded;
                 $self.append($toggleButton);
-                if (callback)
-                    callback();
+                if (cb)
+                    cb();
             };
             $self.toggle();
         });
