@@ -349,7 +349,7 @@
 
             var $this = $(this);
 
-            $this.on('click', function(e) {
+            $this.on('touchstart click', function(e) {
                 e.preventDefault();
                 callback();
             });

@@ -211,9 +211,7 @@
     $.mlp = { x: 0, y: 0 }; // Mouse Last Position
     function documentHandler() {
         var $current = this === document ? $(this) : $(this).contents();
-        $current.mousemove(function (e) {
-            jQuery.mlp = { x: e.pageX, y: e.pageY };
-        });
+        $current.mousemove(function (e) { jQuery.mlp = { x: e.pageX, y: e.pageY }; });
         $current.find("iframe").load(documentHandler);
     }
     $(documentHandler);
@@ -222,7 +220,8 @@
         this.eq(0).each(function () {
             var $current = $(this).is("iframe") ? $(this).contents().find("body") : $(this);
             var offset = $current.offset();
-            result = offset.left <= $.mlp.x && offset.left + $current.outerWidth() > $.mlp.x && offset.top <= $.mlp.y && offset.top + $current.outerHeight() > $.mlp.y;
+            result = offset.left <= $.mlp.x && offset.left + $current.outerWidth() > $.mlp.x &&
+                offset.top <= $.mlp.y && offset.top + $current.outerHeight() > $.mlp.y;
         });
         return result;
     };
@@ -257,7 +256,7 @@
     $.fn.onPressed = function (callback) {
         return this.each(function () {
             var $this = $(this);
-            $this.on('click', function (e) {
+            $this.on('touchstart click', function (e) {
                 e.preventDefault();
                 callback();
             });
@@ -364,6 +363,7 @@
             // when height changes, store string, then pick from line counts
             var stringsByLine = [expandedText];
             var lastHeight = $self.height();
+            // Until empty
             while ($self.text().length > 0) {
                 $self.removeLastWord();
                 var html = $self.html();
