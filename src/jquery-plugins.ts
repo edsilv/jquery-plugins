@@ -9,16 +9,11 @@
             $this.on('click', function(e) {
 
                 var tagName: string = (<any>e.target).tagName;
-
-                var $checkbox: JQuery;
+                var $checkbox: JQuery = $(this).find(':checkbox');
 
                 if (tagName !== "INPUT"){
                     e.preventDefault();
-
-                    $checkbox = $(this).find(':checkbox');
                     $checkbox.prop('checked', !$checkbox.prop('checked'));
-                } else {
-                    $checkbox = $(this);
                 }
 
                 var checked: boolean = $checkbox.is(':checked');
