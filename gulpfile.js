@@ -18,7 +18,7 @@ gulp.task('build', function() {
 
     var tsResult = gulp.src(['src/*.ts', 'typings/*.ts', '!test'])
         .pipe(ts({
-            declarationFiles: false,
+            declarationFiles: true,
             noExternalResolve: true,
             noLib: false,
             module: 'commonjs',
