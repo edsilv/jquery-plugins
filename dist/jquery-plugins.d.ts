@@ -1,8 +1,11 @@
+// jquery-plugins v0.0.25 https://github.com/edsilv/jquery-plugins
+/// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
+/// <reference types="jquery" />
 interface JQueryStatic {
     mlp: any;
 }
 interface JQuery {
-    checkboxButton(onClicked: (checked: boolean) => void): any;
+    checkboxButton(onClicked: (checked: boolean) => void): void;
     disable(): void;
     ellipsis(chars: number): string;
     ellipsisFill(text?: string): any;
@@ -25,10 +28,11 @@ interface JQuery {
     swapClass(removeClass: string, addClass: string): void;
     targetBlank(): void;
     toggleClass(class1: string, class2: string): any;
-    toggleExpandText(chars: number, callback?: () => void): any;
+    toggleExpandText(chars: number, callback?: () => void): void;
     toggleExpandTextByLines(lines: number, lessText: string, moreText: string, callback: () => void): any;
     toggleText(text1: string, text2: string): any;
     updateAttr(attrName: string, oldVal: string, newVal: string): void;
     verticalMargins(): number;
     verticalPadding(): number;
 }
+

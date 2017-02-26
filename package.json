@@ -3,6 +3,9 @@
   "version": "0.0.25",
   "description": "extends jquery with utility functions",
   "main": "dist/jquery-plugins.js",
+    "scripts": {
+    "postinstall": "typings install"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/edsilv/jquery-plugins.git"
@@ -15,15 +18,11 @@
   },
   "homepage": "https://github.com/edsilv/jquery-plugins",
   "devDependencies": {
-    "async": "^0.9.0",
-    "del": "^1.1.1",
+    "extensions": "edsilv/extensions#es6",
     "gulp": "^3.8.11",
-    "gulp-bump": "^0.3.1",
-    "gulp-typescript": "^2.7.4",
-    "merge2": "^0.3.5",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.0",
-    "yargs": "^3.10.0"
+    "gulp-tasks": "viewdir/gulp-tasks#v1.0.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/jquery": "^2.0.40"
+  }
 }
