@@ -1,4 +1,4 @@
-// jquery-plugins v0.0.25 https://github.com/edsilv/jquery-plugins
+// jquery-plugins v0.1.0 https://github.com/edsilv/jquery-plugins
 /// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
 /// <reference types="jquery" />
 interface JQueryStatic {
