@@ -1,11 +1,10 @@
 {
   "name": "jquery-plugins",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "extends jquery with utility functions",
   "types": "./dist/jquery-plugins.d.ts",
   "main": "dist/jquery-plugins.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/edsilv/jquery-plugins.git"
