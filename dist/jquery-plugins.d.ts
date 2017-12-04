@@ -1,5 +1,4 @@
 // jquery-plugins v0.1.0 https://github.com/edsilv/jquery-plugins
-/// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
 /// <reference types="jquery" />
 interface JQueryStatic {
     mlp: any;
@@ -27,9 +26,9 @@ interface JQuery {
     rightPadding(): number;
     swapClass(removeClass: string, addClass: string): void;
     targetBlank(): void;
-    toggleClass(class1: string, class2: string): any;
-    toggleExpandText(chars: number, callback?: () => void): void;
-    toggleExpandTextByLines(lines: number, lessText: string, moreText: string, callback: () => void): any;
+    switchClass(class1: string, class2: string): any;
+    toggleExpandText(chars: number, lessText: string, moreText: string, cb: () => void): any;
+    toggleExpandTextByLines(lines: number, lessText: string, moreText: string, cb: () => void): any;
     toggleText(text1: string, text2: string): any;
     updateAttr(attrName: string, oldVal: string, newVal: string): void;
     verticalMargins(): number;

@@ -1,3 +1,5 @@
+/// <reference types="extensions" />
+
 (function ($) {
 
     $.fn.checkboxButton = function(onClick: (checked: boolean) => void) {
@@ -117,11 +119,11 @@
                 if (expanded) {
                     $self.html(expandedText + " ");
                     $toggleButton.text("less");
-                    $toggleButton.toggleClass("less", "more");
+                    $toggleButton.switchClass("less", "more");
                 } else {
                     $self.html(collapsedText + "&hellip; ");
                     $toggleButton.text("more");
-                    $toggleButton.toggleClass("more", "less");
+                    $toggleButton.switchClass("more", "less");
                 }
 
                 $toggleButton.one('click', function(e) {
@@ -345,7 +347,7 @@
         });
     };
 
-    $.fn.toggleClass = function (class1: string, class2: string) {
+    $.fn.switchClass = function (class1: string, class2: string) {
         return this.each(function () {
             const $this: JQuery = $(this);
 
@@ -379,11 +381,11 @@
                 if (expanded) {
                     $self.html(expandedText + "&nbsp;");
                     $toggleButton.text(lessText);
-                    $toggleButton.toggleClass("less", "more");
+                    $toggleButton.switchClass("less", "more");
                 } else {
                     $self.html(collapsedText + "&nbsp;");
                     $toggleButton.text(moreText);
-                    $toggleButton.toggleClass("more", "less");
+                    $toggleButton.switchClass("more", "less");
                 }
 
                 $toggleButton.one('click', function(e) {
@@ -442,12 +444,12 @@
                 if (expanded) {
                     $self.html(expandedText + " ");
                     $toggleButton.text(lessText);
-                    $toggleButton.toggleClass("less", "more");
+                    $toggleButton.switchClass("less", "more");
                 }
                 else {
                     $self.html(collapsedText + "&hellip; ");
                     $toggleButton.text(moreText);
-                    $toggleButton.toggleClass("more", "less");
+                    $toggleButton.switchClass("more", "less");
                 }
                 $toggleButton.one('click', function (e) {
                     e.preventDefault();
