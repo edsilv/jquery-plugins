@@ -347,6 +347,7 @@
         });
     };
 
+    // todo: use built-in swapclass instead
     $.fn.switchClass = function (class1: string, class2: string) {
         return this.each(function () {
             const $this: JQuery = $(this);
