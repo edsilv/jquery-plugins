@@ -1,5 +1,3 @@
-/// <reference types="extensions" />
-
 (function ($) {
 
     $.fn.checkboxButton = function(onClick: (checked: boolean) => void) {
@@ -235,7 +233,7 @@
     function documentHandler(){
         const $current: JQuery = this === document ? $(this) : $(this).contents();
         $current.mousemove(function(e){jQuery.mlp = {x:e.pageX,y:e.pageY}});
-        $current.find("iframe").load(documentHandler);
+        $current.find('iframe').on('load', documentHandler);
     }
     $(documentHandler);
     $.fn.ismouseover = function() {

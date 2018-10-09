@@ -1,3 +1,4 @@
+/// <reference types="extensions" />
 (function ($) {
     $.fn.checkboxButton = function (onClick) {
         return this.each(function () {
