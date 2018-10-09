@@ -171,7 +171,15 @@
         let finalHeight: number = maxHeight;
 
         if (average) {
-            finalHeight = Math.median(heights);
+
+            heights.sort( function(a,b) {return a - b;} );    
+            const half = Math.floor(heights.length/2);
+        
+            if(heights.length % 2){
+                finalHeight = heights[half];
+            } else {
+                finalHeight = (heights[half-1] + heights[half]) / 2.0;
+            }
         }
 
         this.each(function () {
@@ -333,28 +341,9 @@
         });
     };
 
-    $.fn.swapClass = function (removeClass: string, addClass: string) {
-        return this.each(function () {
-            $(this).removeClass(removeClass).addClass(addClass);
-        });
-    };
-
     $.fn.targetBlank = function () {
         return this.each(function () {
             $(this).find('a').prop('target', '_blank');
-        });
-    };
-
-    // todo: use swapclass instead
-    $.fn.switchClass = function (class1: string, class2: string) {
-        return this.each(function () {
-            const $this: JQuery = $(this);
-
-            if ($this.hasClass(class1)){
-                $(this).removeClass(class1).addClass(class2);
-            } else {
-                $(this).removeClass(class2).addClass(class1);
-            }
         });
     };
 

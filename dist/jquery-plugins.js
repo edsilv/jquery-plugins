@@ -128,7 +128,14 @@
         });
         var finalHeight = maxHeight;
         if (average) {
-            finalHeight = Math.median(heights);
+            heights.sort(function (a, b) { return a - b; });
+            var half = Math.floor(heights.length / 2);
+            if (heights.length % 2) {
+                finalHeight = heights[half];
+            }
+            else {
+                finalHeight = (heights[half - 1] + heights[half]) / 2.0;
+            }
         }
         this.each(function () {
             $(this).height(finalHeight);
@@ -263,26 +270,9 @@
             }
         });
     };
-    $.fn.swapClass = function (removeClass, addClass) {
-        return this.each(function () {
-            $(this).removeClass(removeClass).addClass(addClass);
-        });
-    };
     $.fn.targetBlank = function () {
         return this.each(function () {
             $(this).find('a').prop('target', '_blank');
-        });
-    };
-    // todo: use swapclass instead
-    $.fn.switchClass = function (class1, class2) {
-        return this.each(function () {
-            var $this = $(this);
-            if ($this.hasClass(class1)) {
-                $(this).removeClass(class1).addClass(class2);
-            }
-            else {
-                $(this).removeClass(class2).addClass(class1);
-            }
         });
     };
     $.fn.toggleExpandText = function (chars, lessText, moreText, cb) {
