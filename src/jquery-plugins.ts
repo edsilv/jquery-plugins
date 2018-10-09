@@ -341,6 +341,18 @@
         });
     };
 
+    $.fn.switchClass = function (class1: string, class2: string) {
+        return this.each(function () {
+            const $this: JQuery = $(this);
+
+            if ($this.hasClass(class1)){
+                $(this).removeClass(class1).addClass(class2);
+            } else {
+                $(this).removeClass(class2).addClass(class1);
+            }
+        });
+    };
+
     $.fn.targetBlank = function () {
         return this.each(function () {
             $(this).find('a').prop('target', '_blank');
@@ -515,6 +527,7 @@ interface JQuery {
     removeLastWord(chars?: number, depth?: number): any;
     rightMargin(): number;
     rightPadding(): number;
+    switchClass(class1: string, class2: string): any;
     targetBlank(): void;
     toggleExpandText(chars: number, lessText: string, moreText: string, cb: () => void): any;
     toggleExpandTextByLines(lines: number, lessText: string, moreText: string, cb: () => void): any;

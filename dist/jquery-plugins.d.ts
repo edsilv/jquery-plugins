@@ -23,6 +23,7 @@ interface JQuery {
     removeLastWord(chars?: number, depth?: number): any;
     rightMargin(): number;
     rightPadding(): number;
+    switchClass(class1: string, class2: string): any;
     targetBlank(): void;
     toggleExpandText(chars: number, lessText: string, moreText: string, cb: () => void): any;
     toggleExpandTextByLines(lines: number, lessText: string, moreText: string, cb: () => void): any;

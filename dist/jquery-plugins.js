@@ -270,6 +270,17 @@
             }
         });
     };
+    $.fn.switchClass = function (class1, class2) {
+        return this.each(function () {
+            var $this = $(this);
+            if ($this.hasClass(class1)) {
+                $(this).removeClass(class1).addClass(class2);
+            }
+            else {
+                $(this).removeClass(class2).addClass(class1);
+            }
+        });
+    };
     $.fn.targetBlank = function () {
         return this.each(function () {
             $(this).find('a').prop('target', '_blank');
