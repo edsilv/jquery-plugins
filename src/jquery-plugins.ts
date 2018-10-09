@@ -515,9 +515,7 @@ interface JQuery {
     removeLastWord(chars?: number, depth?: number): any;
     rightMargin(): number;
     rightPadding(): number;
-    swapClass(removeClass: string, addClass: string): void;
     targetBlank(): void;
-    switchClass(class1: string, class2: string): any;
     toggleExpandText(chars: number, lessText: string, moreText: string, cb: () => void): any;
     toggleExpandTextByLines(lines: number, lessText: string, moreText: string, cb: () => void): any;
     toggleText(text1: string, text2: string): any;
