@@ -1,6 +1,6 @@
 {
   "name": "@edsilv/jquery-plugins",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "extends jquery with utility functions",
   "types": "./dist/jquery-plugins.d.ts",
   "main": "./dist/jquery-plugins.js",
