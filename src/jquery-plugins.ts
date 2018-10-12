@@ -343,13 +343,7 @@
 
     $.fn.switchClass = function (class1: string, class2: string) {
         return this.each(function () {
-            const $this: JQuery = $(this);
-
-            if ($this.hasClass(class1)){
-                $(this).removeClass(class1).addClass(class2);
-            } else {
-                $(this).removeClass(class2).addClass(class1);
-            }
+            $(this).removeClass(class1).addClass(class2);
         });
     };
 
